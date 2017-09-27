@@ -14,6 +14,8 @@ import org.jsoup.select.Elements;
  */
 public class Example_01 {
 	public static void main(String[] args) throws Exception {
+		
+		String primerDato = null;
 
 		// String url = "https://stackoverflow.com/questions/2835505";
 		// Document document = Jsoup.connect(url).get();
@@ -25,15 +27,31 @@ public class Example_01 {
 		// for (Element link : links) {
 		// System.out.println(link.attr("href"));
 		
-		String url = "https://as.com";
+		String url = "https://scrapethissite.com/pages/simple/";
 		Document document = Jsoup.connect(url).get();
 		
 		
-		Elements titulo = document.select("a");
+		//Elements titulo = document.select("a");
+	 	
+		Elements capitals = document.select(".row .col-md-4.country .country-info");
 		
-		for(Element dato:titulo){
-			System.out.println(dato.attr("href"));
+		List<String> datos = new ArrayList<String>();
+		for(Element dato:capitals){
+			//if(frase.equals(""))
+			//System.out.println(dato.attr("href"));
+			datos.add(dato.text()+"\n");
 		}
+		
+		for(Element dato:capitals){
+			//if(frase.equals(""))
+			//System.out.println(dato.attr("href"));
+			primerDato = dato.text();
+			if(primerDato.equals("[Capital: Andorra la Vella Population: 84000 Area (km2): 468.0"))
+				System.out.println("HEMOS ENTRADO");
+		}
+		
+		
+		System.out.println(datos);
 		
 	}
 }
