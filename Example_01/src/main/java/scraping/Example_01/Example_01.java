@@ -13,7 +13,7 @@ import org.jsoup.select.Elements;
  *
  */
 public class Example_01 {
-	public static void main(String[] args) throws Exception {
+	public static void mainDos(String[] args) throws Exception {
 		
 		String primerDato = null;
 
@@ -39,19 +39,24 @@ public class Example_01 {
 		for(Element dato:capitals){
 			//if(frase.equals(""))
 			//System.out.println(dato.attr("href"));
-			datos.add(dato.text()+"\n");
-		}
-		
-		for(Element dato:capitals){
-			//if(frase.equals(""))
-			//System.out.println(dato.attr("href"));
+			//datos.add(dato.text()+"\n");
 			primerDato = dato.text();
-			if(primerDato.equals("[Capital: Andorra la Vella Population: 84000 Area (km2): 468.0"))
-				System.out.println("HEMOS ENTRADO");
+			if(primerDato.contains("Andorra la Vella")){
+				System.out.println("Hemos entrado");
+				System.out.print(primerDato);
+			}
 		}
 		
+//		for(Element dato:capitals){
+//			if(frase.equals(""))
+//			System.out.println(dato.attr("href"));
+//			primerDato = dato.text();
+//			if(primerDato.contains("Andorra la Vella"))
+//				System.out.println("HEMOS ENTRADO");
+//		}
 		
-		System.out.println(datos);
+		
+		//System.out.println(datos);
 		
 	}
 }
