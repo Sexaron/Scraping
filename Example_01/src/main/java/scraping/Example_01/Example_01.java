@@ -13,7 +13,7 @@ import org.jsoup.select.Elements;
  *
  */
 public class Example_01 {
-	public static void mainDos(String[] args) throws Exception {
+	public static void main01(String[] args) throws Exception {
 		
 		String primerDato = null;
 

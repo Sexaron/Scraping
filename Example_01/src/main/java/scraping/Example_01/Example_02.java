@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Example_02 {
-	public static void main(String[] args) throws Exception {
+	public static void main02(String[] args) throws Exception {
 
 		String datoAComparar = null;
 		
